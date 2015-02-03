@@ -5,8 +5,8 @@ stdenv.mkDerivation rec {
 
   src = fetchhg {
     url = https://code.google.com/p/dactyl/;
-    rev = "56521ded229c";
-    sha256 = "1ncz0vhvc801phgv8whckyw1q4i8afanji79xm3m2pfyzjvj52q1";
+    rev = "59c43695e9ee";
+    sha256 = "01n3isw25y952xbl8w71rnp5sq6sv9kv6q8xqkfik9yi05qi99h0";
   };
 
   nativeBuildInputs = [ which zip ];
