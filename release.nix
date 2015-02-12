@@ -1,16 +1,9 @@
-{ src
-, supportedPlatforms ? [ "x86_64-linux" ]
-}:
+{ src }:
 
-with (import <nixpkgs> { }).lib;
-genAttrs supportedPlatforms (system:
-  let
-    pkgs = import <nixpkgs> {
-      inherit system;
-    };
-  in {
-    pentadactyl = (pkgs.callPackage ./pentadactyl.nix { }).overrideDerivation (args: {
-      inherit src;
-    });
-  }
-)
+let
+  pkgs = import <nixpkgs> { };
+in {
+  pentadactyl = (pkgs.callPackage ./pentadactyl.nix { }).overrideDerivation (args: {
+    inherit src;
+  });
+}
