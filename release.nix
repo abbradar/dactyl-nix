@@ -9,7 +9,7 @@ genAttrs supportedPlatforms (system:
       inherit system;
     };
   in {
-    pentadactyl = overridePackage (pkgs.callPackage ./pentadactyl.nix { }) (args: {
+    pentadactyl = (pkgs.callPackage ./pentadactyl.nix { }).overrideDerivation (args: {
       inherit src;
     });
   }
