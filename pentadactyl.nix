@@ -22,6 +22,9 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/lib/firefox/extensions
     mv ../downloads/* $out/lib/firefox/extensions
+
+    mkdir -p $out/nix-support
+    echo "file binary-dist \"$(echo $out/lib/firefox/extensions/*.xpi)\"" >> $out/nix-support/hydra-build-products
   '';
 
   meta = with stdenv.lib; {
