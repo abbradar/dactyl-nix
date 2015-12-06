@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   '';
 
   postPatch = ''
-    sed -i 's/maxVersion="[^"]*/maxVersion="44/' pentadactyl/install.rdf
+    sed -i 's/maxVersion="[^"]*/maxVersion="44/' install.rdf
   '';
 
   makeFlags = [ "xpi" ];
