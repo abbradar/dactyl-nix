@@ -1,12 +1,12 @@
-{ stdenv, fetchhg, firefox, which, zip }:
+{ stdenv, fetchgit, firefox, which, zip }:
 
 stdenv.mkDerivation rec {
   name = "pentadactyl";
 
-  src = fetchhg {
-    url = https://code.google.com/p/dactyl/;
-    rev = "59c43695e9ee";
-    sha256 = "01n3isw25y952xbl8w71rnp5sq6sv9kv6q8xqkfik9yi05qi99h0";
+  src = fetchgit {
+    url = "https://github.com/5digits/dactyl";
+    rev = "4356313a0902efbb34013357235419d9cbffeded";
+    sha256 = "6655e0dfee34add0208c3519b27e12fdc746c0b5493ec4e94403e64c51cb3460";
   };
 
   nativeBuildInputs = [ which zip ];
