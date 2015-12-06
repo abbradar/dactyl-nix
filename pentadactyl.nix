@@ -17,6 +17,10 @@ stdenv.mkDerivation rec {
     sourceRoot="$sourceRoot/pentadactyl"
   '';
 
+  postPatch = ''
+    sed -i 's/maxVersion="[^"]*/maxVersion="44/' pentadactyl/install.rdf
+  '';
+
   makeFlags = [ "xpi" ];
 
   installPhase = ''
