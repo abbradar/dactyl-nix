@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   '';
 
   postPatch = ''
-    sed -i 's/maxVersion="[^"]*/maxVersion="44/' install.rdf
+    sed -i 's/maxVersion="[^"]*/maxVersion="${firefox.version}/' install.rdf
   '';
 
   makeFlags = [ "xpi" ];
@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "A Vim-like, five-fingered interface for Firefox";
-    homepage = https://code.google.com/p/dactyl/;
+    homepage = src.meta.homepage;
     license = licenses.mit;
     platforms = firefox.meta.platforms;
     maintainers = with maintainers; [ abbradar ];
