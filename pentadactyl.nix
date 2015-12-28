@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "A Vim-like, five-fingered interface for Firefox";
-    homepage = src.meta.homepage;
+    homepage = http://5digits.org/pentadactyl/;
     license = licenses.mit;
     platforms = firefox.meta.platforms;
     maintainers = with maintainers; [ abbradar ];
