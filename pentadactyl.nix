@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   '';
 
   postPatch = ''
-    sed -i 's/maxVersion="[^"]*/maxVersion="${firefox.version}/' install.rdf
+    sed -i 's/maxVersion="[^"]*/maxVersion="50/' install.rdf
   '';
 
   makeFlags = [ "xpi" ];
